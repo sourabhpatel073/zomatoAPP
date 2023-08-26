@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+# ...
+
+# Get the PORT from the environment and set it as the port Django runs on
+PORT = os.getenv("PORT", default="8000")
+
+# In ALLOWED_HOSTS, ensure you include ".onrender.com"
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +34,7 @@ SECRET_KEY = 'django-insecure-7kbqcttvc(z+t2nxbc3nf73=$0t@yns(9*o-4$hy75d0*iz9f2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
