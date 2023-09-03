@@ -106,7 +106,7 @@ def update_order_status(request, order_id):
         notification_content = {
             'type': 'order_status',
             'order_id': order.id,
-            "userNo": 1,
+            "userNo": order.userNo,
             'new_status': serializer.data["status"],
             'message': f" {order.customer_name} your Order {order.id} status -  changed to {serializer.data['status']}"
         }
